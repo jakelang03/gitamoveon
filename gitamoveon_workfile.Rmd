@@ -1,3 +1,11 @@
+---
+title: "git a move on work"
+author: "jake lang"
+date: "2025-12-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
 ##Load packages
 install.packages("librarian")
 librarian::shelf(here)
@@ -83,3 +91,4 @@ na.omit(data.all$Smoker)
 data.all$GenderClean <- with(data.all, factor(Gender,
                                               levels = c('F', 'GD', 'M', 'na', 'PNTS'),
                                               labels = c("F", "NA", "M", "NA", "NA")))
+```
