@@ -55,3 +55,17 @@ xtabs(~Smoker,data.all) #need to recode
 xtabs(~Belief,data.all) #ok
 xtabs(~SES5,data.all) #ok
 xtabs(~Gender,data.all) #need to recode
+
+#recoding MH
+
+data.all$MH.rec <- data.all$MH
+data.all <- data.all %>%
+  mutate(MH.rec=recode(MH.rec,
+                           "N " = "N"))
+xtabs(~MH.rec,data.all)
+data.all$MH.rec <- ifelse(data.all$MH.rec== "Y", 1, 0)
+xtabs(~MH.rec,data.all)
+
+
+
+
