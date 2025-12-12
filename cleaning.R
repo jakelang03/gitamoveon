@@ -67,5 +67,10 @@ data.all$MH.rec <- ifelse(data.all$MH.rec== "Y", 1, 0)
 xtabs(~MH.rec,data.all)
 
 
-
-
+#recode PH
+data.all$PH.rec<-data.all$PH
+data.all<-data.all %>%
+  mutate(PH.rec=recode(PH.rec,
+                       "yes"="Y",
+                       "no"="N"
+                       ))
